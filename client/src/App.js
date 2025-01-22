@@ -19,7 +19,7 @@ function App() {
       setCurrentStage('collecting');
 
       // 1. 크롤링
-      const response = await axios.post('http://localhost:3001/api/analyze', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/analyze`, {
         topic: topicData.topic,
         searchRange: topicData.searchRange,
         keywords: topicData.keywords,          // 필수 키워드 추가
