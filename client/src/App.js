@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// [수정] useEffect 추가를 위해 import문 수정
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TopicInput from './components/TopicInput/TopicInput';
 import ProgressBar from './components/ProgressBar/ProgressBar';
@@ -10,6 +11,13 @@ function App() {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
+
+  // [추가] 환경변수 확인을 위한 useEffect
+  useEffect(() => {
+    console.log('==== 환경변수 확인 ====');
+    console.log('REACT_APP_API_URL:', process.env.REACT_APP_API_URL);
+    console.log('NODE_ENV:', process.env.NODE_ENV);
+  }, []);
 
   const handleTopicSubmit = async (topicData) => {
     try {
