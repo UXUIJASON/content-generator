@@ -13,6 +13,9 @@ function App() {
 
   const handleTopicSubmit = async (topicData) => {
     try {
+      // API URL 확인용 로그 추가
+      console.log('API URL:', process.env.REACT_APP_API_URL);
+      
       setError(null);
       setIsProcessing(true);
       setProgress(0);
