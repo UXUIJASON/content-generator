@@ -29,12 +29,20 @@ function App() {
       setProgress(0);
       setCurrentStage('collecting');
 
-      // 1. 크롤링
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/analyze`, {
-        topic: topicData.topic,
-        searchRange: topicData.searchRange,
-        keywords: topicData.keywords,          // 필수 키워드 추가
-        requiredContent: topicData.requiredContent  // 필수 내용 추가
+      // [수정] axios 설정 변경
+      const response = await axios({
+        method: 'post',
+        url: `${process.env.REACT_APP_API_URL}/api/analyze`,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        data: {
+          topic: topicData.topic,
+          searchRange: topicData.searchRange,
+          keywords: topicData.keywords,
+          requiredContent: topicData.requiredContent
+        }
       });
       
       // 단계별 진행
