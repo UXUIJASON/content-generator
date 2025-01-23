@@ -4,14 +4,17 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "start": "concurrently \"cd client && npm start\" \"cd server && npm run dev\"",
-      "install-all": "npm install && cd client && npm install && cd ../server && npm install",
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "concurrently \"cd client && npm start\" \"cd server && npm run dev\"",
+        "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-      "concurrently": "^8.2.2"
+        "concurrently": "^8.2.2"
+    },
+    "dependencies": {
+        "multer": "^1.4.5-lts.1"
     }
-  }
+}
