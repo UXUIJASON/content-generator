@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 
 const searchRangeOptions = [
-{ id: 'all', label: '전체' },
-{ id: 'academic', label: '학술자료' },
-{ id: 'government', label: '정부/공공기관' },
-{ id: 'news', label: '뉴스' }
-];
+  { id: 'all', label: '전체' },
+  { id: 'blog', label: '블로그/커뮤니티' },
+  { id: 'expert', label: '전문가/리뷰' },
+  { id: 'sns', label: 'SNS/트렌드' },
+  { id: 'academic', label: '학술자료' },
+  { id: 'government', label: '정부/공공기관' },
+  { id: 'news', label: '뉴스' }
+ ];
 
 const TopicInput = ({ onSubmit }) => {
 const [topic, setTopic] = useState('');
