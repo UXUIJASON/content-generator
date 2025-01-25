@@ -19,8 +19,6 @@ useEffect(() => {
 
 const handleTopicSubmit = async (topicData) => {
  try {
-   console.log('API URL:', process.env.REACT_APP_API_URL);
-   
    setError(null);
    setIsProcessing(true);
    setProgress(0);
@@ -45,15 +43,17 @@ const handleTopicSubmit = async (topicData) => {
      headers: {
        'Content-Type': 'multipart/form-data'
      },
-     data: formData
+     data: formData,
+     onUploadProgress: (progressEvent) => {
+       const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+       setProgress(20 + (percentCompleted * 0.2));
+     }
    });
-   
-   setProgress(30);
-   setCurrentStage('analyzing');
-   setProgress(60);
-   setCurrentStage('rewriting');
-   setProgress(90);
 
+   setCurrentStage('analyzing');
+   setProgress(40);
+   setCurrentStage('rewriting');
+   setProgress(80);
    setResult(response.data);
    setCurrentStage('complete');
    setProgress(100);
