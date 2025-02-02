@@ -71,7 +71,7 @@ return (
    <div className="container mx-auto px-4">
      <header className="text-center mb-8">
        <h1 className="text-3xl font-bold text-gray-900">
-         AI 콘텐츠 생성기
+         Dailydia 콘텐츠 생성기
        </h1>
        <p className="text-gray-600 mt-2">
          주제를 입력하면 관련 자료를 수집하고 최적화된 콘텐츠를 생성합니다
